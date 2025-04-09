@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Стили для кастомного скролла */
+::-webkit-scrollbar {
+  width: 4px; /* Ширина полосы прокрутки */
+}
+
+/* Ползунок */
+::-webkit-scrollbar-thumb {
+  background-color: #ff6e00; /* Цвет ползунка */
+  border-radius: 4px; /* Скругление углов */
+}
+
+/* Фоновый трек */
+::-webkit-scrollbar-track {
+  background-color: #030712; /* Темный фоновый цвет */
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
