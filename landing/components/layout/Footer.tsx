@@ -14,7 +14,6 @@ export function Footer() {
               height={24}
               className='h-6 w-auto ml-2'
             />
-            <span className='text-xl font-bold text-white'>BoostGarage</span>
           </div>
           <p className='text-sm text-gray-400'>
             © {new Date().getFullYear()} BoostGarage. Все права защищены.

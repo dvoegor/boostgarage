@@ -13,31 +13,31 @@ import {
 const features = [
   {
     icon: Cpu,
-    title: 'Модификация программного кода ЭБУ (чип-тюнинг)',
+    title: 'Чип-тюнинг',
     description:
-      'Профессиональная модификация программного обеспечения для улучшения производительности.',
+      'Профессиональная модификация программного кода ЭБУ  для улучшения производительности.',
   },
   {
     icon: FileCode,
-    title: 'Создание индивидуальной прошивки',
+    title: 'Индивидуальные прошивки',
     description:
       'Разработка уникальных прошивок под конкретные требования и модификации.',
   },
   {
     icon: LineChart,
-    title: 'Обкатка/редактирование On-Line топливных карт',
+    title: 'Обкатка топливных карт',
     description:
       'Точная настройка и оптимизация топливных карт в режиме реального времени.',
   },
   {
     icon: Laptop,
-    title: 'Компьютерная диагностика всего, что движется',
+    title: 'Компьютерная диагностика',
     description:
-      'Автомобили, мотоциклы, снегоходы, квадроциклы, пассажирский и грузовой транспорт *кроме МРТ человека).',
+      'Автомобили, мотоциклы, снегоходы, квадроциклы, пассажирский и грузовой транспорт (кроме МРТ человека).',
   },
   {
     icon: Battery,
-    title: 'Замена и ремонт Li-Ion элементов питания в электрокарах',
+    title: 'Li-Ion элементы питания',
     description:
       'Профессиональное обслуживание и восстановление аккумуляторных батарей электромобилей.',
   },
@@ -77,14 +77,15 @@ export function FeaturesSection() {
         <div className='flex flex-col items-center justify-center space-y-4 text-center'>
           <div className='space-y-2'>
             <div className='inline-block rounded-lg bg-[#ff6e00] px-3 py-1 text-sm text-white'>
-              Features
+              Услуги
             </div>
             <h2 className='text-3xl font-bold tracking-tighter md:text-4xl text-white'>
-              Everything You Need in One Place
+              Комплексные решения для вашего авто{' '}
             </h2>
             <p className='max-w-[900px] text-gray-400 md:text-xl'>
-              Our platform offers a comprehensive suite of tools designed to
-              help your business thrive.
+              Мы предлагаем полный спектр услуг по чип-тюнингу и обслуживанию
+              автомобилей, чтобы ваш транспорт работал на максимуме
+              возможностей
             </p>
           </div>
         </div>
@@ -100,7 +101,7 @@ export function FeaturesSection() {
               <h3 className='text-xl font-bold text-center h-[60px] flex items-center text-white'>
                 {title}
               </h3>
-              <p className='text-center text-sm text-gray-400 flex-grow overflow-auto'>
+              <p className='text-center text-sm text-gray-400 flex-grow overflow-auto mt-2'>
                 {description}
               </p>
             </div>

@@ -105,7 +105,7 @@ export default function MatrixHexDisplay({ lines = 8 }: { lines?: number }) {
 
   return (
     <div className='w-full h-full flex items-center justify-center overflow-hidden bg-gray-950 rounded-xl'>
-      <pre className='font-mono text-sm md:text-base leading-relaxed p-4 w-full'>
+      <pre className='font-mono text-xs sm:text-sm md:text-base leading-relaxed p-4 w-full'>
         {hexData.map((line, lineIndex) => (
           <div key={lineIndex} className='flex flex-wrap mb-1'>
             <span className='text-cyan-500 mr-4'>{line[0].value}</span>
