@@ -1,9 +1,11 @@
-"use client"
+'use client'
 
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect, useRef } from 'react'
 
 export default function MatrixHexDisplay({ lines = 8 }: { lines?: number }) {
-  const [hexData, setHexData] = useState<Array<{ value: string; isUpdating: boolean }[]>>([])
+  const [hexData, setHexData] = useState<
+    Array<{ value: string; isUpdating: boolean }[]>
+  >([])
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
 
   // Generate a single line of hex data
@@ -11,13 +13,13 @@ export default function MatrixHexDisplay({ lines = 8 }: { lines?: number }) {
     const hexBytes: Array<{ value: string; isUpdating: boolean }> = []
 
     // Format offset as 8-digit hex
-    const offsetHex = offset.toString(16).padStart(8, "0").toUpperCase()
+    const offsetHex = offset.toString(16).padStart(8, '0').toUpperCase()
     hexBytes.push({ value: offsetHex, isUpdating: false })
 
     for (let i = 0; i < 16; i++) {
       const randomByte = Math.floor(Math.random() * 256)
         .toString(16)
-        .padStart(2, "0")
+        .padStart(2, '0')
         .toUpperCase()
       hexBytes.push({ value: randomByte, isUpdating: false })
     }
@@ -75,7 +77,7 @@ export default function MatrixHexDisplay({ lines = 8 }: { lines?: number }) {
           byteIndices.forEach((index) => {
             newData[lineIndex][index].value = Math.floor(Math.random() * 256)
               .toString(16)
-              .padStart(2, "0")
+              .padStart(2, '0')
               .toUpperCase()
             newData[lineIndex][index].isUpdating = true
           })
@@ -102,31 +104,31 @@ export default function MatrixHexDisplay({ lines = 8 }: { lines?: number }) {
   if (hexData.length === 0) return null
 
   return (
-    <div className="w-full h-full flex items-center justify-center overflow-hidden bg-gray-950 rounded-xl">
-      <pre className="font-mono text-sm md:text-base leading-relaxed p-4 w-full">
+    <div className='w-full h-full flex items-center justify-center overflow-hidden bg-gray-950 rounded-xl'>
+      <pre className='font-mono text-sm md:text-base leading-relaxed p-4 w-full'>
         {hexData.map((line, lineIndex) => (
-          <div key={lineIndex} className="flex flex-wrap mb-1">
-            <span className="text-cyan-500 mr-4">{line[0].value}</span>
+          <div key={lineIndex} className='flex flex-wrap mb-1'>
+            <span className='text-cyan-500 mr-4'>{line[0].value}</span>
             {line.slice(1, 9).map((byte, byteIndex) => (
               <span
                 key={`${lineIndex}-${byteIndex}`}
                 className={`transition-all duration-300 mx-1 ${
                   byte.isUpdating
-                    ? "text-cyan-300 animate-pulse shadow-[0_0_8px_rgba(6,182,212,0.7)]"
-                    : "text-green-400"
+                    ? 'text-cyan-300 animate-pulse shadow-[0_0_8px_rgba(6,182,212,0.7)]'
+                    : 'text-green-400'
                 }`}
               >
                 {byte.value}
               </span>
             ))}
-            <span className="mx-2"></span>
+            <span className='mx-2'></span>
             {line.slice(9).map((byte, byteIndex) => (
               <span
                 key={`${lineIndex}-${byteIndex + 8}`}
                 className={`transition-all duration-300 mx-1 ${
                   byte.isUpdating
-                    ? "text-cyan-300 animate-pulse shadow-[0_0_8px_rgba(6,182,212,0.7)]"
-                    : "text-green-400"
+                    ? 'text-cyan-300 animate-pulse shadow-[0_0_8px_rgba(6,182,212,0.7)]'
+                    : 'text-green-400'
                 }`}
               >
                 {byte.value}
