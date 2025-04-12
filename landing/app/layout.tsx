@@ -1,23 +1,37 @@
-import type { Metadata } from 'next'
 import './globals.css'
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'BOOSTGARAGE',
+  title: 'BoostGarage — Твой надёжный автосервис',
   description:
-    'BOOSTGARAGE — Профессиональные услуги по чип-тюнингу, настройке и оптимизации электронных блоков управления для повышения производительности и экономичности автомобилей.',
-  generator: 'v0.dev',
+    'BOOSTGARAGE — Профессиональные услуги по чип-тюнингу, настройке и оптимизации электронных блоков управления для повышения производительности и экономичности автомобилей. Работаем в Нижнем Новгороде.',
+  icons: {
+    icon: '/favicon.ico',
+  },
+  openGraph: {
+    title: 'BoostGarage — Твой надёжный автосервис',
+    description:
+      'BOOSTGARAGE — Профессиональные услуги по чип-тюнингу, настройке и оптимизации электронных блоков управления для повышения производительности и экономичности автомобилей. Работаем в Нижнем Новгороде.',
+    url: 'https://boostgarage.ru',
+    type: 'website',
+    images: ['/og-image.png'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'BoostGarage — Твой надёжный автосервис',
+    description:
+      'BOOSTGARAGE — Профессиональные услуги по чип-тюнингу, настройке и оптимизации электронных блоков управления для повышения производительности и экономичности автомобилей. Работаем в Нижнем Новгороде.',
+    images: ['/og-image.png'],
+  },
 }
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
     <html lang='ru'>
-      <head>
-        <link rel='shortcut icon' href='/favicon.ico' />
-      </head>
       <body>{children}</body>
     </html>
   )
